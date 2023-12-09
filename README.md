@@ -306,27 +306,27 @@ VALUES
 	 SELECT * FROM Employee
 
  # Queries for different features
-__ Login __
+* Login as Customer
 SELECT customer_id
 FROM customer
 WHERE email = 'sharmaineabrenica@gmail.com' AND password = 'password123';
 
-** List of movies **
+* List of movies
 SELECT movie_id, title, genre, release_date, duration, language, description, price
 FROM Movie;
 
-** Movie Details by movie_id **
+* Movie Details by movie_id
 SELECT title, genre, release_date, duration, language, description
 FROM Movie
 WHERE movie_id = 1;
 
---Showtimes for a specific movie
+* Showtimes for a specific movie
 SELECT Cinema.name AS cinema_name, Show.start_time, Show.show_date
 FROM Show
 INNER JOIN Cinema ON Show.cinema_id = Cinema.cinema_id
 WHERE Show.movie_id = 1;
 
---Booking 
+* Booking 
 SELECT Seat.seat_number, Seat.availability
 FROM Seat
 WHERE Seat.cinema_id = 1
@@ -338,54 +338,54 @@ WHERE Seat.cinema_id = 1
       WHERE Show.movie_id = 1
         AND Show.cinema_id = 1);
 		
---Search
---By Movie Title
+* Search
+- By Movie Title
 SELECT *
 FROM Movie
 WHERE title LIKE CONCAT('%The Marvels');
 
---By Genre
+- By Genre
 SELECT * FROM Movie
 WHERE genre LIKE CONCAT('%Horror');
 
---By Language
+- By Language
 SELECT * FROM Movie
 WHERE language LIKE CONCAT('%English');
 
---By Release Date
+- By Release Date
 SELECT * FROM Movie
 WHERE release_date BETWEEN '2023-01-01' AND '2023-12-31';
 
---Booking History
+* Booking History
 SELECT Booking.booking_id, Movie.title, Show.show_date, Show.start_time, Booking.price
 FROM Booking
 INNER JOIN Show ON Booking.show_id = Show.show_id
 INNER JOIN Movie ON Show.movie_id = Movie.movie_id
 WHERE Booking.user_id = 1;
 
---Displaying Customer information
+* Displaying Customer information
 SELECT full_name, email, password
 FROM Customer
 WHERE customer_id = 1;
 
---Updating their information
+- Updating their information
 UPDATE Customer
 SET email = 'sharnewemail@gmail.com', 
     full_name = 'Shar Abrenica', 
     password = '033004'
 WHERE customer_id = 1;
 
---Login as Admin or Employee
+* Login as Admin or Employee
 SELECT employee_id
 FROM employee 
 WHERE employee_email = 'admin@gmail.com' AND employee_password = 'admin_password';
 
 
---Movie List
---Retrieve All Movies
+* Movie List
+  - Retrieve All Movies
 SELECT title, genre, release_date, duration, language, description
 FROM Movie;
---To edit movie list
+ - To edit movie list
 UPDATE Movie
 SET
     title = 'New Movie Title',
@@ -393,16 +393,16 @@ SET
 WHERE
     movie_id = 5;
 
---To delete a movie
+ - To delete a movie
 DELETE FROM Movie
 WHERE movie_id = 10
 
---To add a movie
+ - To add a movie
 INSERT INTO Movie (title, genre, release_date, duration, language, description, price)
 VALUES
     ('Another Movie', 'Drama, Romance', '2023-12-15', '01:45:00', 'English', 'A beautiful love story.', 299.99);
 
---Schedules
+* Schedules
 SELECT
     Movie.title AS movie_title,
     Show.show_date AS show_date,
@@ -413,12 +413,12 @@ FROM
 JOIN Movie ON Show.movie_id = Movie.movie_id
 JOIN Cinema ON Show.cinema_id = Cinema.cinema_id;
 
---Adding Schedules
+ - Adding Schedules
 INSERT INTO Show (movie_id, cinema_id, start_time, show_date)
 VALUES
     (1, 1, '14:30:00', '2023-12-20');
 	
---Updating a schedule
+ - Updating a schedule
 UPDATE Show
 SET
     start_time = '15:00:00',
@@ -426,11 +426,11 @@ SET
 WHERE
     show_id = 6;
 
---Deleting a Show Schedule
+ - Deleting a Show Schedule
 DELETE FROM Show
 WHERE show_id = 8;
 
---Transactions
+* Transactions
 SELECT
     Transaction.transaction_id,
     Customer.full_name AS customer_name,
@@ -449,14 +449,14 @@ JOIN
 JOIN
     Employee ON Booking.employee_id = Employee.employee_id;
 
---Customer
--- Retrieve all customers
+* Customer
+ - Retrieve all customers
 SELECT * FROM Customer;
 
--- Update customer information
+ - Update customer information
 UPDATE Customer
 SET full_name = 'Updated Name', email = 'updatedemail@example.com'
 WHERE customer_id = customer_id_to_update;
 
--- Delete a customer
+ - Delete a customer
 DELETE FROM Customer WHERE customer_id = customer_id_to_delete;
