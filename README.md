@@ -1,7 +1,27 @@
 
 MovieMate
+With its user-friendly online platform for quick ticket booking, the MovieMate movie ticket booking system modernizes movie theater operations. Encouraging movie-going experiences with comprehensive details and safe payment methods is how the system improves efficiency and revenue optimization. With a modern and effective approach to movie tickets, it seeks to slickly merge technology and entertainment.
 
+Registration/Login: New users need to register with the system by providing necessary details such as full name, email, and creating a password. Existing users can log in using their registered email and password.
 
+Browsing Movies: Once logged in, customers can browse the list of available movies. They can view details such as movie title, genre, release date, and price.
+
+Selecting Movie and Showtime: Customers choose a specific movie they want to watch. They can view the available showtimes for that movie.
+
+Selecting Cinema and Seats: Customers choose the preferred cinema and available seats for the selected showtime.
+
+Booking Tickets: After selecting seats, customers proceed to book tickets for the chosen movie, showtime, and seats.
+
+Payment: Customers make payment for the booked tickets using the integrated payment system.
+The system calculates the total amount based on the number of tickets and the movie's price.
+ 
+Confirmation: After successful payment, customers receive a booking confirmation with details like booking ID, movie title, showtime, and seats.
+
+Viewing Booking History: Customers can check their booking history to review past and upcoming movie reservations.
+
+Profile Management: Customers can manage their profiles, update personal information, and change passwords as needed.
+
+Logging Out: After completing the booking, customers can log out for security.
 CREATE DATABASE MovieMate;
 
 CREATE TABLE Customer (
