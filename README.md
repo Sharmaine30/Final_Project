@@ -393,11 +393,11 @@ SET
 WHERE
     movie_id = 5;
 
- - To delete a movie
+  - To delete a movie
 DELETE FROM Movie
 WHERE movie_id = 10
 
- - To add a movie
+  - To add a movie
 INSERT INTO Movie (title, genre, release_date, duration, language, description, price)
 VALUES
     ('Another Movie', 'Drama, Romance', '2023-12-15', '01:45:00', 'English', 'A beautiful love story.', 299.99);
@@ -413,12 +413,12 @@ FROM
 JOIN Movie ON Show.movie_id = Movie.movie_id
 JOIN Cinema ON Show.cinema_id = Cinema.cinema_id;
 
- - Adding Schedules
+  - Adding Schedules
 INSERT INTO Show (movie_id, cinema_id, start_time, show_date)
 VALUES
     (1, 1, '14:30:00', '2023-12-20');
-	
- - Updating a schedule
+
+  - Updating a schedule
 UPDATE Show
 SET
     start_time = '15:00:00',
@@ -426,7 +426,7 @@ SET
 WHERE
     show_id = 6;
 
- - Deleting a Show Schedule
+  - Deleting a Show Schedule
 DELETE FROM Show
 WHERE show_id = 8;
 
@@ -450,13 +450,13 @@ JOIN
     Employee ON Booking.employee_id = Employee.employee_id;
 
 * Customer
- - Retrieve all customers
+  - Retrieve all customers
 SELECT * FROM Customer;
 
- - Update customer information
+  - Update customer information
 UPDATE Customer
 SET full_name = 'Updated Name', email = 'updatedemail@example.com'
 WHERE customer_id = customer_id_to_update;
 
- - Delete a customer
+  - Delete a customer
 DELETE FROM Customer WHERE customer_id = customer_id_to_delete;
