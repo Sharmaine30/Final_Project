@@ -1,6 +1,8 @@
 # MovieMate
 With its user-friendly online platform for quick ticket booking, the MovieMate movie ticket booking system modernizes movie theater operations. Encouraging movie-going experiences with comprehensive details and safe payment methods is how the system improves efficiency and revenue optimization. With a modern and effective approach to movie tickets, it seeks to slickly merge technology and entertainment.
 
+# User Interface
+
 Registration/Login: New users need to register with the system by providing necessary details such as full name, email, and creating a password. Existing users can log in using their registered email and password.
 
 Browsing Movies: Once logged in, customers can browse the list of available movies. They can view details such as movie title, genre, release date, and price.
@@ -23,6 +25,29 @@ Profile Management: Customers can manage their profiles, update personal informa
 Logging Out: After completing the booking, customers can log out for security.
 CREATE DATABASE MovieMate;
 
+# Employee Interface
+
+Log In: Open the application and enter the employee credentials (username and password) to log in.
+
+Navigate to Movie Table: Instead of a dashboard, the employee directly navigates to the "Movie" section or table.
+
+View Movie List: Access the movie table to view a comprehensive list of all available movies, including details such as title, genre, release date, and current status.
+
+Check Movie Details: Select a specific movie to view detailed information like genre, release date, duration, language, description, and ticket price
+
+Transaction Processing: Complete the booking transaction by selecting the number of tickets, confirming seat choices, and processing the payment.
+
+Edit Movie Details: If there are updates to a movie's details (e.g., change in release date), the employee can access the movie table and edit relevant information.
+
+Delete Movie Entries: In case a movie is no longer running or has been canceled, the employee can remove the corresponding entry from the movie table.
+
+Customer Support: Access customer profiles, view booking history, and assist with any inquiries or issues customers may have.
+
+View Transaction History: Check the transaction history related to movie bookings to monitor revenue and reconcile payments.
+
+Log Out: Once the tasks are completed, the employee can log out of the application to secure access.
+
+# Tables
 CREATE TABLE Customer (
     customer_id INT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
@@ -264,7 +289,8 @@ VALUES
 	 SELECT * FROM Seat
 	 SELECT * FROM Transaction
 	 SELECT * FROM Employee
-	 
+
+ # Queries for different features
 --Login
 SELECT customer_id
 FROM customer
