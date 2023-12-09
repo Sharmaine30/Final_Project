@@ -48,7 +48,7 @@ CREATE DATABASE MovieMate;
 
 # Tables
 
-** Create the Customers table and inserting values **
+Create the Customers table and inserting values
 CREATE TABLE Customer (
     customer_id INT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
@@ -69,7 +69,7 @@ VALUES
 	(9, 'Grace Turner', 'gracepass', 'graceturner@gmail.com'),
     (10, 'Henry White', 'henrypass', 'henrywhite@gmail.com');
 
-  ** Create the Movie table and inserting values **
+# Create the Movie table and inserting values
 	
 CREATE TABLE Movie (
     movie_id INT PRIMARY KEY,
@@ -95,7 +95,7 @@ VALUES
 	(9, 'The Jack In The Box: Awakening', 'Horror', '2022-01-03', '01:33:00', 'English', 'When a vintage Jack-in-the-box is opened by a dying woman, she enters into a deal with the demon within that would see her illness cured in return for helping it claim six innocent victims.', 312.00),
     (10, 'Five Breakups and a Romance', 'Drama', '2023-10-18', '01:42:00', 'Filipino', 'Even if two people are on the opposite sides of the universe, once the connection is made, they are basically one.', 312.00);
 
-** Create the Cinema table and inserting values **
+# Create the Cinema table and inserting values
 
 CREATE TABLE Cinema (
     cinema_id INT PRIMARY KEY,
@@ -110,7 +110,7 @@ VALUES
     (3, 34, 'Cinema 3'),
 	(4, 34, 'Cinema 4');
 	
-** Create the Show table and inserting values **
+# Create the Show table and inserting values 
 
 CREATE TABLE Show (
     show_id INT PRIMARY KEY,
@@ -135,7 +135,7 @@ VALUES
     (9, 9, 4, '09:00:00', '2022-11-28'),
     (10, 10, 4, '04:40:00', '2023-11-28');
 	
-** Create the Seat table and inserting values **
+# Create the Seat table and inserting values
 
 CREATE TABLE Seat (
     seat_id INT PRIMARY KEY,
@@ -216,7 +216,7 @@ VALUES
     (67, 2, 'F3', 'Available'),
     (68, 2, 'F4', 'Available');
 	
-** Create the Booking table and inserting values **
+# Create the Booking table and inserting values
 
 CREATE TABLE Booking (
     booking_id INT PRIMARY KEY,
@@ -245,7 +245,7 @@ VALUES
     (9, 9, 9, 50, 2, '2022-01-02', 312.00),
     (10, 10, 10, 52, 2, '2023-10-16', 312.00);
 	
-** Create the Transaction table and inserting values **		
+# Create the Transaction table and inserting values	
 
 CREATE TABLE Transaction (
     transaction_id INT PRIMARY KEY,
@@ -271,7 +271,7 @@ VALUES
     (9, 9, 7, 1, 312.00, '2022-12-02'),
     (10, 8, 10, 3, 936.00, '2023-12-03');
 	
-** Create the Employee table and inserting values **
+# Create the Employee table and inserting values
 
 CREATE TABLE Employee (
     employee_id INT PRIMARY KEY,
@@ -294,6 +294,7 @@ VALUES
     (9, 'Matthew Turner', 'matthew_password', 'matthew.turner@gmail.com'),
     (10, 'Laura Evans', 'laura_password', 'laura.evans@gmail.com');
 
+# SELECT Statements
 
 	 SELECT * FROM Customer
 	 SELECT * FROM Movie
@@ -305,7 +306,7 @@ VALUES
 	 SELECT * FROM Employee
 
  # Queries for different features
-** Login **
+__ Login __
 SELECT customer_id
 FROM customer
 WHERE email = 'sharmaineabrenica@gmail.com' AND password = 'password123';
