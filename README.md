@@ -3,51 +3,52 @@ With its user-friendly online platform for quick ticket booking, the MovieMate 
 
 # User Interface
 
-Registration/Login: New users need to register with the system by providing necessary details such as full name, email, and creating a password. Existing users can log in using their registered email and password.
+* Registration/Login: New users need to register with the system by providing necessary details such as full name, email, and creating a password. Existing users can log in using their registered email and password.
 
-Browsing Movies: Once logged in, customers can browse the list of available movies. They can view details such as movie title, genre, release date, and price.
+* Browsing Movies: Once logged in, customers can browse the list of available movies. They can view details such as movie title, genre, release date, and price.
 
-Selecting Movie and Showtime: Customers choose a specific movie they want to watch. They can view the available showtimes for that movie.
+* Selecting Movie and Showtime: Customers choose a specific movie they want to watch. They can view the available showtimes for that movie.
 
-Selecting Cinema and Seats: Customers choose the preferred cinema and available seats for the selected showtime.
+* Selecting Cinema and Seats: Customers choose the preferred cinema and available seats for the selected showtime.
 
-Booking Tickets: After selecting seats, customers proceed to book tickets for the chosen movie, showtime, and seats.
+* Booking Tickets: After selecting seats, customers proceed to book tickets for the chosen movie, showtime, and seats.
 
-Payment: Customers make payment for the booked tickets using the integrated payment system.
-The system calculates the total amount based on the number of tickets and the movie's price.
+* Payment: Customers make payment for the booked tickets using the integrated payment system. The system calculates the total amount based on the number of tickets and the movie's price.
  
-Confirmation: After successful payment, customers receive a booking confirmation with details like booking ID, movie title, showtime, and seats.
+* Confirmation: After successful payment, customers receive a booking confirmation with details like booking ID, movie title, showtime, and seats.
 
-Viewing Booking History: Customers can check their booking history to review past and upcoming movie reservations.
+* Viewing Booking History: Customers can check their booking history to review past and upcoming movie reservations.
 
-Profile Management: Customers can manage their profiles, update personal information, and change passwords as needed.
+* Profile Management: Customers can manage their profiles, update personal information, and change passwords as needed.
 
-Logging Out: After completing the booking, customers can log out for security.
+* Logging Out: After completing the booking, customers can log out for security.
 CREATE DATABASE MovieMate;
 
 # Employee Interface
 
-Log In: Open the application and enter the employee credentials (username and password) to log in.
+* Log In: Open the application and enter the employee credentials (username and password) to log in.
 
-Navigate to Movie Table: Instead of a dashboard, the employee directly navigates to the "Movie" section or table.
+* Navigate to Movie Table: Instead of a dashboard, the employee directly navigates to the "Movie" section or table.
 
-View Movie List: Access the movie table to view a comprehensive list of all available movies, including details such as title, genre, release date, and current status.
+* View Movie List: Access the movie table to view a comprehensive list of all available movies, including details such as title, genre, release date, and current status.
 
-Check Movie Details: Select a specific movie to view detailed information like genre, release date, duration, language, description, and ticket price
+* Check Movie Details: Select a specific movie to view detailed information like genre, release date, duration, language, description, and ticket price
 
-Transaction Processing: Complete the booking transaction by selecting the number of tickets, confirming seat choices, and processing the payment.
+* Transaction Processing: Complete the booking transaction by selecting the number of tickets, confirming seat choices, and processing the payment.
 
-Edit Movie Details: If there are updates to a movie's details (e.g., change in release date), the employee can access the movie table and edit relevant information.
+* Edit Movie Details: If there are updates to a movie's details (e.g., change in release date), the employee can access the movie table and edit relevant information.
 
-Delete Movie Entries: In case a movie is no longer running or has been canceled, the employee can remove the corresponding entry from the movie table.
+* Delete Movie Entries: In case a movie is no longer running or has been canceled, the employee can remove the corresponding entry from the movie table.
 
-Customer Support: Access customer profiles, view booking history, and assist with any inquiries or issues customers may have.
+* Customer Support: Access customer profiles, view booking history, and assist with any inquiries or issues customers may have.
 
-View Transaction History: Check the transaction history related to movie bookings to monitor revenue and reconcile payments.
+* View Transaction History: Check the transaction history related to movie bookings to monitor revenue and reconcile payments.
 
-Log Out: Once the tasks are completed, the employee can log out of the application to secure access.
+* Log Out: Once the tasks are completed, the employee can log out of the application to secure access.
 
 # Tables
+
+** Create the Customers table and inserting values **
 CREATE TABLE Customer (
     customer_id INT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
@@ -67,6 +68,8 @@ VALUES
     (8, 'Frank Miller', 'frankpass', 'frankmiller@gmail.com'),
 	(9, 'Grace Turner', 'gracepass', 'graceturner@gmail.com'),
     (10, 'Henry White', 'henrypass', 'henrywhite@gmail.com');
+
+  ** Create the Movie table and inserting values **
 	
 CREATE TABLE Movie (
     movie_id INT PRIMARY KEY,
@@ -92,6 +95,8 @@ VALUES
 	(9, 'The Jack In The Box: Awakening', 'Horror', '2022-01-03', '01:33:00', 'English', 'When a vintage Jack-in-the-box is opened by a dying woman, she enters into a deal with the demon within that would see her illness cured in return for helping it claim six innocent victims.', 312.00),
     (10, 'Five Breakups and a Romance', 'Drama', '2023-10-18', '01:42:00', 'Filipino', 'Even if two people are on the opposite sides of the universe, once the connection is made, they are basically one.', 312.00);
 
+** Create the Cinema table and inserting values **
+
 CREATE TABLE Cinema (
     cinema_id INT PRIMARY KEY,
     capacity INT,
@@ -105,6 +110,8 @@ VALUES
     (3, 34, 'Cinema 3'),
 	(4, 34, 'Cinema 4');
 	
+** Create the Show table and inserting values **
+
 CREATE TABLE Show (
     show_id INT PRIMARY KEY,
     movie_id INT,
@@ -128,6 +135,8 @@ VALUES
     (9, 9, 4, '09:00:00', '2022-11-28'),
     (10, 10, 4, '04:40:00', '2023-11-28');
 	
+** Create the Seat table and inserting values **
+
 CREATE TABLE Seat (
     seat_id INT PRIMARY KEY,
     cinema_id INT,
@@ -207,6 +216,8 @@ VALUES
     (67, 2, 'F3', 'Available'),
     (68, 2, 'F4', 'Available');
 	
+** Create the Booking table and inserting values **
+
 CREATE TABLE Booking (
     booking_id INT PRIMARY KEY,
     user_id INT,
@@ -234,7 +245,8 @@ VALUES
     (9, 9, 9, 50, 2, '2022-01-02', 312.00),
     (10, 10, 10, 52, 2, '2023-10-16', 312.00);
 	
-		
+** Create the Transaction table and inserting values **		
+
 CREATE TABLE Transaction (
     transaction_id INT PRIMARY KEY,
     user_id INT,
@@ -259,6 +271,8 @@ VALUES
     (9, 9, 7, 1, 312.00, '2022-12-02'),
     (10, 8, 10, 3, 936.00, '2023-12-03');
 	
+** Create the Employee table and inserting values **
+
 CREATE TABLE Employee (
     employee_id INT PRIMARY KEY,
     employee_name VARCHAR(100),
@@ -291,16 +305,16 @@ VALUES
 	 SELECT * FROM Employee
 
  # Queries for different features
---Login
+** Login **
 SELECT customer_id
 FROM customer
 WHERE email = 'sharmaineabrenica@gmail.com' AND password = 'password123';
 
---List of movies
+** List of movies **
 SELECT movie_id, title, genre, release_date, duration, language, description, price
 FROM Movie;
 
---Movie Details by movie_id
+** Movie Details by movie_id **
 SELECT title, genre, release_date, duration, language, description
 FROM Movie
 WHERE movie_id = 1;
