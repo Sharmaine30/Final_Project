@@ -385,7 +385,7 @@ WHERE employee_email = 'admin@gmail.com' AND employee_password = 'admin_password
   - Retrieve All Movies
 SELECT title, genre, release_date, duration, language, description
 FROM Movie;
- - To edit movie list
+  - To edit movie list
 UPDATE Movie
 SET
     title = 'New Movie Title',
