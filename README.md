@@ -1,5 +1,5 @@
 
-MovieMate
+#MovieMate
 With its user-friendly online platform for quick ticket booking, the MovieMate movie ticket booking system modernizes movie theater operations. Encouraging movie-going experiences with comprehensive details and safe payment methods is how the system improves efficiency and revenue optimization. With a modern and effective approach to movie tickets, it seeks to slickly merge technology and entertainment.
 
 Registration/Login: New users need to register with the system by providing necessary details such as full name, email, and creating a password. Existing users can log in using their registered email and password.
