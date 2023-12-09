@@ -339,20 +339,20 @@ WHERE Seat.cinema_id = 1
         AND Show.cinema_id = 1);
 		
 * Search
-- By Movie Title
+  - By Movie Title
 SELECT *
 FROM Movie
 WHERE title LIKE CONCAT('%The Marvels');
 
-- By Genre
+  - By Genre
 SELECT * FROM Movie
 WHERE genre LIKE CONCAT('%Horror');
 
-- By Language
+  - By Language
 SELECT * FROM Movie
 WHERE language LIKE CONCAT('%English');
 
-- By Release Date
+  - By Release Date
 SELECT * FROM Movie
 WHERE release_date BETWEEN '2023-01-01' AND '2023-12-31';
 
@@ -368,7 +368,7 @@ SELECT full_name, email, password
 FROM Customer
 WHERE customer_id = 1;
 
-- Updating their information
+  - Updating their information
 UPDATE Customer
 SET email = 'sharnewemail@gmail.com', 
     full_name = 'Shar Abrenica', 
