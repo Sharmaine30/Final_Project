@@ -1,4 +1,7 @@
-# Final_Project
+
+MovieMate
+
+
 CREATE DATABASE MovieMate;
 
 CREATE TABLE Customer (
